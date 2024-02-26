@@ -30,11 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEPLOYED' not in os.environ
 
-ALLOWED_HOSTS = []
-
-if 'VERCEL_EXTERNAL_HOSTNAME' in os.environ:
-    ALLOWED_HOSTS.append(".vercel.app")
-    ALLOWED_HOSTS.append(".now.sh")
+ALLOWED_HOSTS = [] if 'DEPLOYED' not in os.environ else ['.vercel.app', '.now.sh']
 
 # Application definition
 
