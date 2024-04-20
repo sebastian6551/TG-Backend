@@ -195,7 +195,7 @@ if ACTIVATE_EMAIL:
     DJOSER['TOKEN_MODEL'] = 'rest_framework.authtoken.models.Token'
 
     # email
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     EMAIL_HOST = os.environ.get('EMAIL_HOST')
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_API_KEY')
@@ -216,4 +216,5 @@ CORS_ALLOWED_ORIGINS = [
 AUTH_USER_MODEL = 'api.User'
 
 #GDAL_LIBRARY_PATH = r'C:\OSGeo4W\bin\gdal308'
-GDAL_LIBRARY_PATH = '/usr/local/lib/libgdal.so'
+GDAL_LIBRARY_PATH = "libgdal.so"
+GEOS_LIBRARY_PATH = "libgeos_c.so.1"
