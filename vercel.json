@@ -6,11 +6,11 @@
         },
         {
             "source": "/(.*)",
-            "destination": "a/index.py"
+            "destination": "api/wsgi.py"
         }
     ],
     "functions": {
-        "a/index.py": {
+        "api/wsgi.py": {
           "runtime": "vercel-python-gis@1.0.0"
         }
       }
