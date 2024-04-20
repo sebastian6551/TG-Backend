@@ -1,5 +1,5 @@
 import re
-from django.db import models
+from django.contrib.gis.db import models
 from django.contrib.auth.models import (
     AbstractBaseUser,
     BaseUserManager,
@@ -162,6 +162,7 @@ class Trip(models.Model):
     start_time = models.TimeField()
     starting_point = models.CharField(max_length=255)
     arrival_point = models.CharField(max_length=255)
+    point = models.PointField(geography=True)
     seats = models.IntegerField(validators=[validate_seats])
     fare = models.IntegerField(validators=[validate_fare])
     current_trip = models.BooleanField(default=False)
