@@ -1,37 +1,17 @@
 {
-    "version": 2,
-    "builds": [
+    "rewrites": [
         {
-            "src": "backend/wsgi.py",
-            "use": "@vercel/python",
-            "config": {
-                "maxLambdaSize": "15mb",
-                "runtime": "python3.9"
-            }
+            "source": "/static",
+            "destination": "/static"
         },
         {
-            "src": "build_files.sh",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "staticfiles"
-            }
+            "source": "/(.*)",
+            "destination": "backend/wsgi.py"
         }
     ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "backend/wsgi.py"
-        },
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
+    "functions": {
+        "backend/wsgi.py": {
+          "runtime": "vercel-python-gis@1.0.0"
         }
-    ],
-    "functions": [
-        {
-            "backend/wsgi.py": {
-                "runtime": "vercel-python-gis@1.0.0"
-            }
-        }
-    ]
+      }
 }
