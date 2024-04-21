@@ -1,21 +1,4 @@
 {
-    "builds": [
-        {
-            "src": "backend/wsgi.py",
-            "use": "@vercel/python",
-            "config": {
-                "maxLambdaSize": "15mb",
-                "runtime": "vercel-python-gis@1.0.0"
-            }
-        },
-        {
-            "src": "build_files.sh",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "staticfiles"
-            }
-        }
-    ],
     "rewrites": [
         {
             "source": "/static",
@@ -25,5 +8,10 @@
             "source": "/(.*)",
             "destination": "backend/wsgi.py"
         }
-    ]
+    ],
+    "functions": {
+        "backend/wsgi.py": {
+          "runtime": "vercel-python-gis@1.0.0"
+        }
+      }
 }
