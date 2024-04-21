@@ -1,29 +1,12 @@
 {
-    "builds": [
+    "routes": [
         {
-            "src": "backend/wsgi.py",
-            "use": "vercel-python-gis@1.0.0",
-            "config": {
-                "maxLambdaSize": "15mb",
-                "runtime": "python3.9"
-            }
+            "src": "/(.*)",
+            "dest": "backend/wsgi.py"
         },
         {
-            "src": "build_files.sh",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "staticfiles"
-            }
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/static",
-            "destination": "/static"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "backend/wsgi.py"
+            "src": "/static/(.*)",
+            "dest": "/static/$1"
         }
     ]
 }
