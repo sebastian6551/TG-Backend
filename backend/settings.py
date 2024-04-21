@@ -216,5 +216,5 @@ CORS_ALLOWED_ORIGINS = [
 AUTH_USER_MODEL = 'api.User'
 
 #GDAL_LIBRARY_PATH = r'C:\OSGeo4W\bin\gdal308'
-GDAL_LIBRARY_PATH = "libgdal.so"
-GEOS_LIBRARY_PATH = "libgeos_c.so.1"
+#GDAL_LIBRARY_PATH = "libgdal.so"
+#GEOS_LIBRARY_PATH = "libgeos_c.so.1"
