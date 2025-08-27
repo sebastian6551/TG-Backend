@@ -3,7 +3,7 @@
         {
             "src": "backend/wsgi.py",
             "use": "@vercel/python"
-        },
+        }
     ],
     "routes": [
         {
